@@ -13,4 +13,6 @@ Scenario - Adding Products to the Cart
     And I verify that the search bar is visible
     And I enter "Men Tshirt" in the search bar
     And I click on the search button and the item "Men Tshirt" is Visible
+    And I add the product to the cart
+    And I add a second item to the cart
     
