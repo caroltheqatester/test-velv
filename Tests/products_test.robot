@@ -2,6 +2,7 @@
 Documentation        This Suite tests the "automationexercise.com" webiste
 Resource             ../Resources/products_resources.robot
 Resource             ../Resources/PO/productsPage.robot
+Resource             ../Resources/PO/cartPage.robot
 Test Setup               Open the browser
 Test Teardown            Close the browser
 
@@ -15,4 +16,6 @@ Scenario - Adding Products to the Cart
     And I click on the search button and the item "Men Tshirt" is Visible
     And I add the product to the cart
     And I add a second item to the cart
+    When I click on the 'Cart' button
+    Then I should verify that the products are visible in the cart
     

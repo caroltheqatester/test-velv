@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231209 21:03:40.970" rpa="false" schemaversion="4">
+<suite id="s1" name="Products Test" source="C:\Users\carol\OneDrive\Documents\test-velv\Tests\products_test.robot">
+<test id="s1-t1" name="Scenario - Adding Products to the Cart" line="10">
+<kw name="Open the browser" library="products_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231209 21:03:41.238" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231209 21:03:41.238" endtime="20231209 21:03:43.734"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231209 21:03:43.734" endtime="20231209 21:03:43.866"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231209 21:03:43.867" level="INFO">Opening url 'https://automationexercise.com/'</msg>
+<status status="PASS" starttime="20231209 21:03:43.866" endtime="20231209 21:03:48.257"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${PRODUCTS_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:48.259" level="INFO">Clicking element 'css=a .material-icons.card_travel'.</msg>
+<status status="PASS" starttime="20231209 21:03:48.257" endtime="20231209 21:03:52.513"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=${CATEGORY}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231209 21:03:52.514" endtime="20231209 21:03:52.681"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:41.238" endtime="20231209 21:03:52.681"/>
+</kw>
+<kw name="Given I am on the 'Products' Page" library="productsPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${PRODUCTS_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:52.685" level="INFO">Clicking element 'css=a .material-icons.card_travel'.</msg>
+<status status="PASS" starttime="20231209 21:03:52.684" endtime="20231209 21:03:55.430"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=${CATEGORY}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231209 21:03:55.430" endtime="20231209 21:03:55.491"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:52.683" endtime="20231209 21:03:55.491"/>
+</kw>
+<kw name="And I verify that the search bar is visible" library="productsPage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css=${SEARCH_BAR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231209 21:03:55.562" level="INFO">Element 'css=input#search_product' is displayed.</msg>
+<status status="PASS" starttime="20231209 21:03:55.492" endtime="20231209 21:03:55.562"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:55.492" endtime="20231209 21:03:55.562"/>
+</kw>
+<kw name="And I enter &quot;Men Tshirt&quot; in the search bar" library="productsPage" sourcename="And I enter &quot;${ITEM}&quot; in the search bar">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${SEARCH_BAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:55.564" level="INFO">Clicking element 'css=input#search_product'.</msg>
+<status status="PASS" starttime="20231209 21:03:55.563" endtime="20231209 21:03:55.654"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=${SEARCH_BAR}</arg>
+<arg>text=${ITEM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:55.656" level="INFO">Typing text 'Men Tshirt' into text field 'css=input#search_product'.</msg>
+<status status="PASS" starttime="20231209 21:03:55.655" endtime="20231209 21:03:55.972"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:55.563" endtime="20231209 21:03:55.972"/>
+</kw>
+<kw name="And I click on the search button and the item &quot;Men Tshirt&quot; is Visible" library="productsPage" sourcename="And I click on the search button and the item &quot;${ITEM}&quot; is visible">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:55.974" level="INFO">Clicking element 'css=button#submit_search'.</msg>
+<status status="PASS" starttime="20231209 21:03:55.973" endtime="20231209 21:03:57.240"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=${PRODUCT_TEXT}</arg>
+<arg>${ITEM}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231209 21:03:57.241" level="INFO">Verifying element 'css=div.productinfo&gt;p' contains exact text 'Men Tshirt'.</msg>
+<status status="PASS" starttime="20231209 21:03:57.240" endtime="20231209 21:03:57.274"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:55.973" endtime="20231209 21:03:57.274"/>
+</kw>
+<kw name=" And I add the product to the cart" library="productsPage">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>css=${OVERLAY}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231209 21:03:57.275" endtime="20231209 21:03:57.586"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>css=${ADD_TO_CART}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231209 21:03:57.586" endtime="20231209 21:03:57.638"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${ADD_TO_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:57.640" level="INFO">Clicking element 'css=div.product-overlay div.overlay-content a.btn.add-to-cart'.</msg>
+<status status="PASS" starttime="20231209 21:03:57.638" endtime="20231209 21:03:57.720"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=${MESSAGE_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231209 21:03:57.721" endtime="20231209 21:03:58.232"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${DISMISS_MODAL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:58.234" level="INFO">Clicking element 'css=.close-modal'.</msg>
+<status status="PASS" starttime="20231209 21:03:58.232" endtime="20231209 21:03:58.312"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:57.275" endtime="20231209 21:03:58.313"/>
+</kw>
+<kw name="And I add a second item to the cart" library="productsPage">
+<kw name="And I verify that the search bar is visible" library="productsPage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>css=${SEARCH_BAR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20231209 21:03:58.350" level="INFO">Element 'css=input#search_product' is displayed.</msg>
+<status status="PASS" starttime="20231209 21:03:58.314" endtime="20231209 21:03:58.350"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:58.314" endtime="20231209 21:03:58.350"/>
+</kw>
+<kw name="And I enter &quot;Blue Top&quot; in the search bar" library="productsPage" sourcename="And I enter &quot;${ITEM}&quot; in the search bar">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${SEARCH_BAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:58.353" level="INFO">Clicking element 'css=input#search_product'.</msg>
+<status status="PASS" starttime="20231209 21:03:58.352" endtime="20231209 21:03:58.425"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=${SEARCH_BAR}</arg>
+<arg>text=${ITEM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:58.426" level="INFO">Typing text 'Blue Top' into text field 'css=input#search_product'.</msg>
+<status status="PASS" starttime="20231209 21:03:58.425" endtime="20231209 21:03:58.687"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:58.350" endtime="20231209 21:03:58.687"/>
+</kw>
+<kw name="And I click on the search button and the item &quot;Blue Top&quot; is Visible" library="productsPage" sourcename="And I click on the search button and the item &quot;${ITEM}&quot; is visible">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:03:58.688" level="INFO">Clicking element 'css=button#submit_search'.</msg>
+<status status="PASS" starttime="20231209 21:03:58.687" endtime="20231209 21:03:59.616"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=${PRODUCT_TEXT}</arg>
+<arg>${ITEM}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231209 21:03:59.617" level="INFO">Verifying element 'css=div.productinfo&gt;p' contains exact text 'Blue Top'.</msg>
+<status status="PASS" starttime="20231209 21:03:59.616" endtime="20231209 21:03:59.642"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:58.687" endtime="20231209 21:03:59.642"/>
+</kw>
+<kw name=" And I add the product to the cart" library="productsPage">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>css=${OVERLAY}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231209 21:03:59.643" endtime="20231209 21:03:59.989"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>css=${ADD_TO_CART}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231209 21:03:59.989" endtime="20231209 21:04:00.057"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${ADD_TO_CART}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:04:00.058" level="INFO">Clicking element 'css=div.product-overlay div.overlay-content a.btn.add-to-cart'.</msg>
+<status status="PASS" starttime="20231209 21:04:00.057" endtime="20231209 21:04:00.140"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=${MESSAGE_MODAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231209 21:04:00.140" endtime="20231209 21:04:00.662"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${DISMISS_MODAL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:04:00.663" level="INFO">Clicking element 'css=.close-modal'.</msg>
+<status status="PASS" starttime="20231209 21:04:00.662" endtime="20231209 21:04:00.725"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:59.643" endtime="20231209 21:04:00.725"/>
+</kw>
+<status status="PASS" starttime="20231209 21:03:58.313" endtime="20231209 21:04:00.725"/>
+</kw>
+<kw name="When I click on the 'Cart' button" library="cartPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${CART_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231209 21:04:00.726" level="INFO">Clicking element 'css=i.fa.fa-shopping-cart'.</msg>
+<status status="PASS" starttime="20231209 21:04:00.726" endtime="20231209 21:04:02.054"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${SHOPPING_CART_TEXT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231209 21:04:02.055" endtime="20231209 21:04:02.073"/>
+</kw>
+<status status="PASS" starttime="20231209 21:04:00.725" endtime="20231209 21:04:02.073"/>
+</kw>
+<kw name="Then I should verify that the products are visible in the Cart" library="cartPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=Men Tshirt</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231209 21:04:02.096" level="INFO">Current page contains text 'Men Tshirt'.</msg>
+<status status="PASS" starttime="20231209 21:04:02.074" endtime="20231209 21:04:02.096"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=Blue Top</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231209 21:04:02.124" level="INFO">Current page contains text 'Blue Top'.</msg>
+<status status="PASS" starttime="20231209 21:04:02.096" endtime="20231209 21:04:02.124"/>
+</kw>
+<status status="PASS" starttime="20231209 21:04:02.074" endtime="20231209 21:04:02.124"/>
+</kw>
+<kw name="Close the browser" library="products_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231209 21:04:02.270" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231209 21:04:02.125" endtime="20231209 21:04:02.270"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231209 21:04:02.270" endtime="20231209 21:04:04.615"/>
+</kw>
+<status status="PASS" starttime="20231209 21:04:02.125" endtime="20231209 21:04:04.615"/>
+</kw>
+<doc>This test validates the functionality of searching and adding items to the cart</doc>
+<tag>addingToCart</tag>
+<status status="PASS" starttime="20231209 21:03:41.237" endtime="20231209 21:04:04.616"/>
+</test>
+<doc>This Suite tests the "automationexercise.com" webiste</doc>
+<status status="PASS" starttime="20231209 21:03:40.973" endtime="20231209 21:04:04.618"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">addingToCart</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Products Test">Products Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
