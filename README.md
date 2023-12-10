@@ -26,15 +26,14 @@ the same file corresponding to their page, all separate from the test data file,
 ## Difficulties encountered:
 
 ### Problems with Locators:
-We encountered difficulties due to the lack of unique locators, such as the ID, making the identification of elements on the page challenging.
+I encountered difficulties due to the lack of unique locators, such as the ID, making the identification of elements on the page challenging.
 
 ### Overlay inside the Product Card:
 The presence of an overlay within the product card posed a challenge. This functionality can result in flaky tests, since interaction with elements covered by the overlay may not be 
 consistent.
 
 ### Calculating the Product Total:
-Carrying out the step of adding up the total of the products was a challenge since there is no specific total column within the cart page. This required a creative approach to validate 
-the accuracy of the product totals in the cart.
+Performing the step of adding up the total of the products was a challenge since there was no specific total column within the cart page. Normally, in a case like this, I would ask the P.O. or P.M. about the requirements of the function/business or even a developer.
 
 ___
 
